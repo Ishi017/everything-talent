@@ -36,8 +36,8 @@ const Team = () => {
           <Image 
             src={Photo1} 
             alt="hero page banner" 
-            width={110} 
-            height={104} 
+            width={100} 
+            height={80} 
             className={styles.valueLogos} 
           />
         </HoverCardTrigger>
@@ -62,8 +62,8 @@ const Team = () => {
           <Image 
             src={Photo2} 
             alt="hero page banner" 
-            width={110} 
-            height={104} 
+            width={100} 
+            height={80} 
             className={styles.valueLogos} 
           />
         </HoverCardTrigger>
@@ -84,8 +84,8 @@ const Team = () => {
           <Image 
             src={Photo3} 
             alt="hero page banner" 
-            width={110} 
-            height={104} 
+            width={100} 
+            height={80} 
             className={styles.valueLogos} 
           />
         </HoverCardTrigger>
@@ -110,8 +110,8 @@ const Team = () => {
               <Image 
                 src={Photo4} 
                 alt="Alice Johnson" 
-                width={110} 
-                height={104} 
+                width={100} 
+                height={80} 
                 className={styles.valueLogos} 
               />
             </HoverCardTrigger>
@@ -131,8 +131,8 @@ const Team = () => {
               <Image 
                 src={Photo5} 
                 alt="Bob Smith" 
-                width={110} 
-                height={104} 
+                width={100} 
+                height={80} 
                 className={styles.valueLogos} 
               />
             </HoverCardTrigger>
@@ -152,8 +152,8 @@ const Team = () => {
               <Image 
                 src={Photo6} 
                 alt="Charlie Brown" 
-                width={110} 
-                height={104} 
+                width={100} 
+                height={80} 
                 className={styles.valueLogos} 
               />
             </HoverCardTrigger>
@@ -176,8 +176,8 @@ const Team = () => {
               <Image 
                 src={Photo7} 
                 alt="Daisy Clark" 
-                width={110} 
-                height={104} 
+                width={100} 
+                height={80} 
                 className={styles.valueLogos} 
               />
             </HoverCardTrigger>
@@ -197,8 +197,8 @@ const Team = () => {
               <Image 
                 src={Photo8} 
                 alt="Eve Davis" 
-                width={110} 
-                height={104} 
+                width={100} 
+                height={80} 
                 className={styles.valueLogos} 
               />
             </HoverCardTrigger>
@@ -218,8 +218,8 @@ const Team = () => {
               <Image 
                 src={Photo9} 
                 alt="Frank Miller" 
-                width={110} 
-                height={104} 
+                width={100} 
+                height={80} 
                 className={styles.valueLogos} 
               />
             </HoverCardTrigger>
@@ -239,8 +239,8 @@ const Team = () => {
               <Image 
                 src={Photo10} 
                 alt="Grace Lee" 
-                width={110} 
-                height={104} 
+                width={100} 
+                height={80} 
                 className={styles.valueLogos} 
               />
             </HoverCardTrigger>
@@ -263,8 +263,8 @@ const Team = () => {
               <Image 
                 src={Photo11} 
                 alt="Alice Johnson" 
-                width={110} 
-                height={104} 
+                width={100} 
+                height={80} 
                 className={styles.valueLogos} 
               />
             </HoverCardTrigger>
@@ -284,8 +284,8 @@ const Team = () => {
               <Image 
                 src={Photo12} 
                 alt="Bob Smith" 
-                width={110} 
-                height={104} 
+                width={100} 
+                height={80} 
                 className={styles.valueLogos} 
               />
             </HoverCardTrigger>
@@ -305,8 +305,8 @@ const Team = () => {
               <Image 
                 src={Photo13} 
                 alt="Charlie Brown" 
-                width={110} 
-                height={104} 
+                width={100} 
+                height={80} 
                 className={styles.valueLogos} 
               />
             </HoverCardTrigger>
@@ -328,8 +328,8 @@ const Team = () => {
           <Image 
             src={Photo14} 
             alt="hero page banner" 
-            width={110} 
-            height={104} 
+            width={100} 
+            height={80} 
             className={styles.valueLogos} 
           />
         </HoverCardTrigger>
@@ -350,8 +350,8 @@ const Team = () => {
           <Image 
             src={Photo15} 
             alt="hero page banner" 
-            width={110} 
-            height={104} 
+            width={100} 
+            height={80} 
             className={styles.valueLogos} 
           />
         </HoverCardTrigger>
@@ -376,8 +376,8 @@ const Team = () => {
           <Image 
             src={Photo16} 
             alt="hero page banner" 
-            width={110} 
-            height={104} 
+            width={100} 
+            height={80} 
             className={styles.valueLogos} 
           />
         </HoverCardTrigger>

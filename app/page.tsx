@@ -6,6 +6,7 @@ import Story from "@/components/ui/story";
 import Values from "@/components/ui/values";
 import Team from "@/components/ui/team";
 import Footer from "@/components/ui/footer";
+import CultureCard from "@/components/ui/cultureCard";
 
 
 export default function Home() {
@@ -17,7 +18,9 @@ export default function Home() {
    <Story/>
    <Values/>
    <Team/>
+   <CultureCard/>
    <Footer/>
+
  </div>
   );
 }
