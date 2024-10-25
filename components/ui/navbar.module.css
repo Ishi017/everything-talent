@@ -1,0 +1,63 @@
+/* navbar.module.css */
+.navMenu{
+    position: sticky; 
+    top: 0; 
+    z-index: 5000; 
+}
+
+.navbar {
+    display: flex;
+    justify-content: center; /* Space between logo/menu and other elements */
+    align-items: center; /* Center items vertically */
+    padding: 0.2rem; /* Add padding for spacing */
+    background-color: #fff; /* Optional: Set a background color */
+    gap: 10.5rem;
+  
+}
+
+.navbarLogo{
+    align-items: flex-start;
+    /* margin-right: 6rem; */
+}
+
+.menuItems {
+    display: flex; /* Ensure menu items are in a row */
+    margin-left: 1rem; /* Adjust space between logo and menu items */
+}
+
+.menuItem {
+    margin: 0 1rem; /* Space between menu items */
+    cursor: pointer;
+    color: #565b62; /* Example color */
+    font-size: 0.9rem;
+    font-weight: bold;
+}
+
+.menuItem:hover {
+    color: #3c3f44; /* Example color */
+}
+
+.navbarButtonLight{
+    margin-right: 0.5rem;
+    margin-left: 2.1rem;
+}
+
+.loginButton {
+    background: linear-gradient(to right, #4f83eb, #2166ef);
+    color: white;
+    padding: 1.3rem 1rem;
+    border: none;
+    border-radius: 0.25rem;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+}
+
+.loginButton p{
+    font-weight: bold;
+}
+
+.navbarButtons{
+    display: flex;
+    align-items: center;
+}

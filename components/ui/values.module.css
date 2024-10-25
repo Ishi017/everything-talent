@@ -1,0 +1,81 @@
+.intro{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    margin-top: 12rem;
+    margin-bottom: 1rem;
+    }
+    
+    .intro h1{
+        font-size: 3rem;
+        font-weight:900;
+    }
+    
+    .intro h4{
+        text-align: center;
+        font-size: 24px;
+        margin: 0.5rem 13rem 0.1rem 13rem;
+        line-height: 1.7rem;
+        font-weight: 580;
+        color: #2d2f33;
+    }
+
+
+/* secondpart */
+
+.centreImageStyle{
+    border-radius: 1rem;
+}
+
+.valuesList h4{
+    font-size: 24px;
+    font-weight: 540;
+    margin-bottom: 0.5rem;
+}
+
+.valuesList p{
+    font-size: 16px;
+    text-align: center;
+}
+
+.valuesList{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.value1, .a, .b, .value3{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap:0.3rem;
+    /* margin: 5rem; */
+    width: 22rem;
+}
+
+.valueLogos{
+    border-radius: 0.5rem;
+    margin-bottom: 1rem;
+}
+
+.value2{
+    display: flex;
+    flex-direction: row;
+}
+
+.value1{
+    margin-top: 5rem;
+    margin-bottom: 3.5rem;
+}
+
+.value3{
+    margin-top:2rem;
+    margin-bottom: 5rem;
+}
+
+.a, .b{
+margin: 5rem 4rem 2rem 4rem;
+}
