@@ -1,78 +1,126 @@
-import {
-    NavigationMenu,
-    NavigationMenuList,
-    NavigationMenuItem,
-} from "@/components/ui/navigation-menu";
-import Image from "next/image"; // Import Image from next/image
-import mainLogo from "@/public/everything-logo.png"; // Adjust the path to your logo
-import React from 'react';
-import lightMode from "@/public/light-mode.png";
-import { ChevronRight } from "lucide-react";
-import { Button } from "@/components/ui/button";
-import styles from './navbar.module.css';
+"use client";
 
-const Navbar = () => {
-    return (
-        <div className={styles.navMenu}>
-            <NavigationMenu >
-                <NavigationMenuList> 
-                <div className={styles.navbar}>
+import React, { useState, useEffect } from "react";
+import { LuMoon, LuSun } from "react-icons/lu";
+import { IoMenu, IoClose } from "react-icons/io5";
+import Logo from "@/public/everything-logo.png";
+import Image from "next/image";
 
-                <div className={styles.navbarLogo}>
-                        <NavigationMenuItem>
-                            <Image
-                                src={mainLogo}
-                                alt="Company Logo"
-                                width={230}
-                                height={230}
-                                className="object-contain ml-8" 
-                            />
-                        </NavigationMenuItem>
-                </div>
+// Custom hook for dark mode
+const useDarkMode = () => {
+  const [theme, setTheme] = useState("light");
 
-                <div className={styles.menuItems}> 
-                            <NavigationMenuItem>
-                                <span className={styles.menuItem}>Home</span>
-                            </NavigationMenuItem>
-                            <NavigationMenuItem>
-                                <span className={styles.menuItem}>About</span>
-                            </NavigationMenuItem>
-                            <NavigationMenuItem>
-                                <span className={styles.menuItem}>Use Cases</span>
-                            </NavigationMenuItem>
-                            <NavigationMenuItem>
-                                <span className={styles.menuItem}>Prices</span>
-                            </NavigationMenuItem>
-                            <NavigationMenuItem>
-                                <span className={styles.menuItem}>Resources</span>
-                            </NavigationMenuItem>
-                            <NavigationMenuItem>
-                                <span className={styles.menuItem}>Blog</span>
-                            </NavigationMenuItem>
-                            <NavigationMenuItem>
-                                <span className={styles.menuItem}>Support</span>
-                            </NavigationMenuItem>
-                        </div>
+  useEffect(() => {
+    const storedTheme = localStorage.getItem("theme") || "light";
+    document.documentElement.classList.add(storedTheme);
+    setTheme(storedTheme);
+  }, []);
 
-                    <div className={styles.navbarButtons}>
-                    <NavigationMenuItem>
-                        <Image
-                            src={lightMode}
-                            alt="Light Mode"
-                            width={70}
-                            height={70}
-                            className={styles.navbarButtonLight} 
-                        />
-                    </NavigationMenuItem>
-                    <Button className={styles.loginButton}> 
-                        <p>Login</p> <ChevronRight />
-                    </Button>
-                    </div>
-                    </div>
-                </NavigationMenuList>
-            </NavigationMenu>
+  const toggleTheme = () => {
+    const newTheme = theme === "light" ? "dark" : "light";
+    document.documentElement.classList.replace(theme, newTheme);
+    localStorage.setItem("theme", newTheme);
+    setTheme(newTheme);
+  };
+
+  return { theme, toggleTheme };
+};
+
+const Navbar: React.FC = () => {
+  const [isOpen, setIsOpen] = useState(false);
+  const { theme, toggleTheme } = useDarkMode();
+
+  const toggleMenu = () => {
+    setIsOpen(!isOpen);
+  };
+
+  return (
+    <>
+      <div className="fixed w-full top-0 bg-white dark:bg-gray-900 py-2 px-4 md:py-2 md:px-32 flex justify-between items-center border-b-2  dark:border-gray-600 z-40">
+        {/* Logo and Site Name */}
+        <div className="flex items-center space-x-2">
+          <Image
+            src={Logo}
+            alt="Everything Talent Logo"
+            className="h-8 w-8"
+          />
+          <span className="text-xl font-bold text-black dark:text-white">
+            Everything Talent
+          </span>
         </div>
-    );
+
+        {/* Menu Links */}
+        <div className="hidden md:flex space-x-8">
+          {[
+            "Home",
+            "About",
+            "Use Cases",
+            "Pricing",
+            "Resources",
+            "Blog",
+            "Support",
+          ].map((item, index) => (
+            <a
+              key={index}
+              className="text-gray-600 dark:text-gray-300 hover:text-black dark:hover:text-white cursor-pointer text-sm font-medium"
+            >
+              {item}
+            </a>
+          ))}
+        </div>
+
+        {/* Dark Mode and Login Buttons */}
+        <div className="flex items-center space-x-7">
+          {/* Dark Mode Toggle */}
+          <button onClick={toggleTheme} className="text-xl">
+            {theme === "dark" ? (
+              <LuMoon className="text-gray-300 hover:text-white" />
+            ) : (
+              <LuSun className="text-gray-600 hover:text-black" />
+            )}
+          </button>
+
+          {/* Login Button */}
+          <button className="hidden md:flex px-3 py-2 text-sm bg-blue-600 text-white rounded-md hover:shadow-xl hover:bg-blue-700 transition">
+            Login
+            <span className="ml-2">→</span>
+          </button>
+
+          {/* Mobile Menu Toggle */}
+          <button onClick={toggleMenu} className="md:hidden text-xl">
+            {isOpen ? (
+              <IoClose className="text-gray-800 dark:text-gray-200" />
+            ) : (
+              <IoMenu className="text-gray-800 dark:text-gray-200" />
+            )}
+          </button>
+        </div>
+      </div>
+
+      {/* Mobile Menu */}
+      {isOpen && (
+        <div className="md:hidden fixed top-12 left-0 w-full bg-white dark:bg-gray-800 z-10 flex flex-col space-y-6 py-6 border-t">
+          {[
+            "Home",
+            "About",
+            "Use Cases",
+            "Pricing",
+            "Resources",
+            "Blog",
+            "Support",
+          ].map((item, index) => (
+            <a
+              key={index}
+              className="text-gray-600 dark:text-gray-300 hover:text-black dark:hover:text-white cursor-pointer text-sm font-medium"
+              onClick={() => setIsOpen(false)}
+            >
+              {item}
+            </a>
+          ))}
+        </div>
+      )}
+    </>
+  );
 };
 
 export default Navbar;
