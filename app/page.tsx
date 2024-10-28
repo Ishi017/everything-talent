@@ -1,5 +1,3 @@
-import Image from "next/image";
-import { Button } from "@/components/ui/button"
 import Navbar from "@/components/ui/navbar";
 import Banner from "@/components/ui/banner";
 import Story from "@/components/ui/story";
