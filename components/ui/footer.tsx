@@ -1,52 +1,147 @@
-// components/Footer.tsx
+
 import React from "react";
-import styles from "./footer.module.css"; // Assuming you have a CSS module for styles
+import Link from "next/link";
+import Image from "next/image";
+import Logo from "@/public/footerLogo.png";
+import Banner from "@/public/footerImage.png";
 
-const Footer: React.FC = () => {
+const Footer = () => {
   return (
-    <footer className={styles.footer}>
-      <div className={styles.container}>
+    <footer className="w-full bg-black px-4 md:px-28 pt-16 flex flex-col gap-4">
 
-        {/* Column 1: Resources */}
-        <div className={styles.column}>
-          <h4>Resources</h4>
-          <ul>
-            <li><a href="/blogs">Blogs</a></li>
-            <li><a href="/success-stories">Success Stories</a></li>
-            <li><a href="/case-studies">Case Studies</a></li>
-            <li><a href="/whitepapers">Whitepapers</a></li>
-            <li><a href="/faqs">FAQs</a></li>
-            <li><a href="/hiring-guides">Hiring Guides</a></li>
-            <li><a href="/support">Support</a></li>
-          </ul>
-        </div>
-
-        {/* Column 2: Get Started */}
-        <div className={styles.column}>
-          <h4>Get Started</h4>
-          <ul>
-            <li><a href="/pricing">Pricing</a></li>
-            <li><a href="/hiring-solutions">Hiring Solutions</a></li>
-            <li><a href="/funded-startups">Funded Startups</a></li>
-            <li><a href="/free-trial">Free Trial</a></li>
-            <li><a href="/contact-support">Contact Support</a></li>
-            <li><a href="/request-demo">Request Demo</a></li>
-            <li><a href="/trust">Trust</a></li>
-          </ul>
-        </div>
-
-        {/* Column 3: Legal */}
-        <div className={styles.column}>
-          <h4>Legal</h4>
-          <ul>
-            <li><a href="/privacy-policy">Privacy Policy</a></li>
-            <li><a href="/terms-of-service">Terms of Service</a></li>
-            <li><a href="/cookie-policy">Cookie Policy</a></li>
-            <li><a href="/ccpa-compliance">CCPA Compliance</a></li>
-          </ul>
-        </div>
-        
+      <div className="mb-6 flex flex-col items-start">
+        <Link href="/">
+          <Image src={Logo} alt="Everything Talent Logo" className="h-40 w-44" />
+        </Link>
+        <span className="text-3xl font-semibold text-white">Everything Talent</span>
       </div>
+
+      <div className="container mx-auto grid grid-cols-2 gap-8 sm:gap-6 sm:grid-cols-3">
+
+        <div>
+          <h2 className="mb-6 text-sm font-semibold uppercase text-white">Resources</h2>
+          <ul className="text-gray-400">
+            <li className="mb-4">
+              <Link href="/blog" className="hover:underline">
+                Blogs
+              </Link>
+            </li>
+            <li className="mb-4">
+              <Link href="/about/#our-story" className="hover:underline">
+                Success Stories
+              </Link>
+            </li>
+            <li className="mb-4">
+              <Link href="#" className="hover:underline">
+                Case Studies
+              </Link>
+            </li>
+            <li className="mb-4">
+              <Link href="#" className="hover:underline">
+                Whitepapers
+              </Link>
+            </li>
+            <li className="mb-4">
+              <Link href="/faqs" className="hover:underline">
+                FAQs
+              </Link>
+            </li>
+            <li className="mb-4">
+              <Link href="#" className="hover:underline">
+                Hiring Guides
+              </Link>
+            </li>
+            <li className="mb-4">
+              <Link href="/support" className="hover:underline">
+                Support
+              </Link>
+            </li>
+          </ul>
+        </div>
+
+        {/* Get Started */}
+        <div>
+          <h2 className="mb-6 text-sm font-semibold uppercase text-white">Get Started</h2>
+          <ul className="text-gray-400">
+            <li className="mb-4">
+              <Link href="/pricing" className="hover:underline">
+                Pricing
+              </Link>
+            </li>
+            <li className="mb-4">
+              <Link href="/use-cases/hiring-solutions" className="hover:underline">
+                Hiring Solutions
+              </Link>
+            </li>
+            <li className="mb-4">
+              <Link href="/use-cases/funded-startups" className="hover:underline">
+                Funded Startups
+              </Link>
+            </li>
+            <li className="mb-4">
+              <Link href="/login" className="hover:underline">
+                Free Trial
+              </Link>
+            </li>
+            <li className="mb-4">
+              <Link href="/support" className="hover:underline">
+                Contact Support
+              </Link>
+            </li>
+            <li className="mb-4">
+              <Link href="#" className="hover:underline">
+                Request Demo
+              </Link>
+            </li>
+            <li className="mb-4">
+              <Link href="#" className="hover:underline">
+                Trust
+              </Link>
+            </li>
+          </ul>
+        </div>
+
+        {/* Legal */}
+        <div>
+          <h2 className="mb-6 text-sm font-semibold uppercase text-white">Legal</h2>
+          <ul className="text-gray-400">
+            <li className="mb-4">
+              <Link href="/privacy-policy" className="hover:underline">
+                Privacy Policy
+              </Link>
+            </li>
+            <li className="mb-4">
+              <Link href="/terms" className="hover:underline">
+                Terms of Service
+              </Link>
+            </li>
+            <li className="mb-4">
+              <Link href="/terms" className="hover:underline">
+                Cookie Policy
+              </Link>
+            </li>
+            <li className="mb-4">
+              <Link href="/terms" className="hover:underline">
+                CCPA Compliance
+              </Link>
+            </li>
+          </ul>
+        </div>
+      </div>
+
+      {/* Banner Section */}
+      <section className="relative w-full mt-6">
+        <Image
+          alt="San Francisco skyline top hiring"
+          loading="lazy"
+          width={7003}
+          height={2107}
+          className="max-h-[26rem] h-full w-full"
+          src={Banner}
+        />
+        <div className="pointer-events-none absolute h-[10rem] bottom-0 right-0 w-[6rem] bg-gradient-to-l from-[#000000]"></div>
+        <div className="pointer-events-none absolute h-[10rem] bottom-0 left-0 w-[6rem] bg-gradient-to-r from-[#000000]"></div>
+      </section>
     </footer>
   );
 };

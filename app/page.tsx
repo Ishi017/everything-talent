@@ -7,6 +7,7 @@ import Values from "@/components/ui/values";
 import Team from "@/components/ui/team";
 import Footer from "@/components/ui/footer";
 import CultureCard from "@/components/ui/cultureCard";
+import Journey from "@/components/ui/journey";
 
 
 export default function Home() {
@@ -19,6 +20,7 @@ export default function Home() {
    <Values/>
    <Team/>
    <CultureCard/>
+   <Journey/>
    <Footer/>
 
  </div>

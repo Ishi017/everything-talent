@@ -14,7 +14,7 @@ import styles from './navbar.module.css';
 const Navbar = () => {
     return (
         <div className={styles.navMenu}>
-            <NavigationMenu className="ml-8">
+            <NavigationMenu >
                 <NavigationMenuList> 
                 <div className={styles.navbar}>
 
@@ -25,7 +25,7 @@ const Navbar = () => {
                                 alt="Company Logo"
                                 width={230}
                                 height={230}
-                                className="object-contain" 
+                                className="object-contain ml-8" 
                             />
                         </NavigationMenuItem>
                 </div>
