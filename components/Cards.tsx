@@ -1,7 +1,6 @@
 "use client";
 
 import { HoverEffect } from "../components/ui/card-hover-effect";
-import Image from "next/image";
 import innovation from "@/public/innovation.jpg";
 import teamwork from "@/public/teamwork.jpg";
 import impact from "@/public/impact.jpg";
