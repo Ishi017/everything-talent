@@ -1,7 +1,6 @@
 "use client";
 import { cn } from "@/lib/utils";
 import { AnimatePresence, motion } from "framer-motion";
-import Link from "next/link";
 import { useState } from "react";
 import Image, { StaticImageData } from "next/image";
 
@@ -12,12 +11,12 @@ export const HoverEffect = ({
     items: {
       title: string;
       description: string;
-      image?: string | StaticImageData; // Update this line
+      image?: string | StaticImageData;
     }[];
     className?: string;
   }) => {
-   
-  let [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
+
+  const [hoveredIndex, setHoveredIndex] = useState<number | null>(null);
 
   return (
     <div
@@ -28,6 +27,7 @@ export const HoverEffect = ({
     >
       {items.map((item, idx) => (
         <div
+          key={idx}  // Add key prop here
           className="relative group block p-2 h-full w-full"
           onMouseEnter={() => setHoveredIndex(idx)}
           onMouseLeave={() => setHoveredIndex(null)}
@@ -52,7 +52,6 @@ export const HoverEffect = ({
           <Card image={item.image}>
             <CardTitle>{item.title}</CardTitle>
             <CardDescription>{item.description}</CardDescription>
-            {/* <Image src={item.image} alt=""/> */}
           </Card>
         </div>
       ))}
@@ -65,7 +64,7 @@ export const Card = ({
     className,
     children,
   }: {
-    image?: string | StaticImageData; // Updated type
+    image?: string | StaticImageData;
     className?: string;
     children: React.ReactNode;
   }) => {
