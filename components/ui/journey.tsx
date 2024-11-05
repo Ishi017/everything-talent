@@ -1,15 +1,12 @@
-import Image from 'next/image';
-import React from 'react'
-import Journey1 from "@/public/journey1.png"
-import Journey2 from "@/public/journey2.png"
-import Journey3 from "@/public/journey3.png"
-import Journey4 from "@/public/journey4.png"
+import React from "react";
 
 const Journey = () => {
   return (
     <div>
-      <div className="w-full px-28 bg-white dark:bg-neutral-950 pt-8 md:py-16">
+      <div className="w-full px-4 md:px-24 bg-transaprent border-white pt-8 md:py-16">
+        {/* <!-- Container for the journey section --> */}
         <div className="flex justify-center md:container px-4 sm:px-6 mb-6 md:mb-40">
+          {/* <!-- Text container for heading and description --> */}
           <div className="text-center md:w-[80vw]">
             <h2 className="text-4xl md:text-5xl font-bold mb-6">Our Journey</h2>
             <p className="text-xl opacity-80 mb-4">
@@ -21,16 +18,18 @@ const Journey = () => {
           </div>
         </div>
 
-        <div className="w-full pr-20 bg-white dark:bg-neutral-950 md:container px-4 sm:px-6">
+        {/* <!-- Timeline container --> */}
+        <div className="w-full bg-white dark:bg-neutral-950 md:container px-4 sm:px-6">
           <div className="relative mx-auto flex">
             <div className="flex flex-col w-full gap-0">
-              {/* Journey Item 1 */}
+              {/* <!-- Timeline event (repeated block) --> */}
               <div className="relative -mt-20 flex justify-start w-1/2 flex-col">
-                <div className="sticky flex flex-col items-end py-2 z-10 top-60 self-end bg-gradient-to-r from-[#003f6c] via-[#61beef] to-[#00aaff] dark:bg-gradient-to-b dark:from-[#000] dark:to-[#120a1d] rotate-180">
+                {/* <!-- Sticky label for each event --> */}
+                <div className="sticky flex flex-col items-end border py-2 z-10 top-60 self-end bg-gradient-to-r from-[#003f6c] via-[#61beef] to-[#00aaff] dark:bg-gradient-to-b dark:from-[#000] dark:to-[#120a1d] rotate-180">
                   <div className="h-14 w-14 absolute -left-[15%] -top-4 flex self-end rounded-full bg-sky-500 items-center justify-center dark:bg-sky-500">
                     <div className="h-12 w-12 rounded-full bg-black border border-blue-500 flex items-center justify-center dark:border-neutral-700">
                       <span className="text-white">
-                        
+                        {/* <!-- SVG Icon --> */}
                         <svg
                           xmlns="http://www.w3.org/2000/svg"
                           width="24"
@@ -57,11 +56,30 @@ const Journey = () => {
                 </div>
 
                 <div className="relative -mt-6 flex h-fit md:w-[90%] lg:w-[80%] justify-end z-20">
-                <Image
-                alt="IDC Names Arctic Wolf a Leader"
-                className="rounded-lg border max-h-[300px] w-[400px] h-full"
-                src={Journey1}
-                />
+                  <div className="relative border border-blue-300 dark:border-[#3577f39a] py-4 px-8 max-w-[24rem] bg-gradient-to-br from-black via-violet-900 to-violet-500 dark:bg-gradient-to-b dark:from-[#000] dark:to-[#120a1d] transition-all duration-500 shadow-lg hover:shadow-[0_4px_8px_0_rgba(75,0,130,0.5)] rounded-lg">
+                    <p className="text-transparent bg-clip-text bg-gradient-to-r from-white via-gray-200 to-gray-400 dark:bg-[linear-gradient(to_right,_#3c3cbf_0%,_#FFFFFF_50%)] font-bold text-xl">
+                      Aug 2021
+                    </p>
+                    <div>
+                      <img
+                        alt="IDC Names Arctic Wolf a Leader"
+                        className="rounded-lg border max-h-[212px] w-[317px] h-full"
+                        src="https://everythingtalent.ai/_next/image?url=%2Fassets%2Fhome%2Fai1.jpg&w=256&q=75"
+                      />
+                    </div>
+                    <h3 className="text-[16px] flex gap-2 items-center font-bold text-white dark:text-gray-300 mt-2">
+                      IDC Names Arctic Wolf a Leader
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        fill="none"
+                      >
+                        <path d="M7 7h10v10"></path>
+                        <path d="M7 17 17 7"></path>
+                      </svg>
+                    </h3>
+                  </div>
                 </div>
               </div>
               {/* 2 */}
@@ -99,11 +117,27 @@ const Journey = () => {
                 </div>
 
                 <div className="relative -mt-6 flex h-fit md:w-[90%] lg:w-[80%] justify-end z-20">
-                      <Image
+                  <div className="relative border border-blue-300 dark:border-[#3577f39a] py-4 px-8 max-w-[24rem] bg-gradient-to-br from-black via-violet-900 to-violet-500 dark:bg-gradient-to-b dark:from-[#000] dark:to-[#120a1d] transition-all duration-500 shadow-lg hover:shadow-[0_4px_8px_0_rgba(75,0,130,0.5)] rounded-lg">
+                    <p className="text-transparent bg-clip-text bg-gradient-to-r from-white via-gray-200 to-gray-400 dark:bg-[linear-gradient(to_right,_#3c3cbf_0%,_#FFFFFF_50%)] font-bold text-xl">
+                      Feb 2022
+                    </p>
+                    <div>
+                      <img
                         alt="Arctic Wolf Incident Launch"
-                        className="rounded-lg border max-h-[300px] w-[400px] h-full"
-                        src={Journey2}
+                        className="rounded-lg border max-h-[212px] w-[317px] h-full"
+                        src="https://everythingtalent.ai/_next/image?url=%2Fassets%2Fhome%2Ftools.jpg&w=256&q=75"
                       />
+                    </div>
+                    <h3 className="text-[16px] flex gap-2 items-center font-bold text-white dark:text-gray-300 mt-2">
+                      Arctic Wolf Incident Launch
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        fill="none"
+                      ></svg>
+                    </h3>
+                  </div>
                 </div>
               </div>
               {/* 3 */}
@@ -141,11 +175,33 @@ const Journey = () => {
                 </div>
 
                 <div className="relative -mt-6 flex h-fit md:w-[90%] lg:w-[80%] justify-end z-20">
-                      <Image
+                  <div className="relative border border-blue-300 dark:border-[#3577f39a] py-4 px-8 max-w-[24rem] bg-gradient-to-br from-black via-violet-900 to-violet-500 dark:bg-gradient-to-b dark:from-[#000] dark:to-[#120a1d] transition-all duration-500 shadow-lg hover:shadow-[0_4px_8px_0_rgba(75,0,130,0.5)] rounded-lg">
+                    <p className="text-transparent bg-clip-text bg-gradient-to-r from-white via-gray-200 to-gray-400 dark:bg-[linear-gradient(to_right,_#3c3cbf_0%,_#FFFFFF_50%)] font-bold text-xl">
+                      Oct 2022
+                    </p>
+                    <div>
+                      <img
                         alt="Arctic Wolf Expands to ANZ"
-                        className="rounded-lg border max-h-[300px] w-[400px] h-full"
-                        src={Journey3}
+                        className="rounded-lg border max-h-[212px] w-[317px] h-full"
+                        src="https://everythingtalent.ai/_next/image?url=%2Fassets%2Fhome%2Fai2.jpg&w=256&q=75"
                       />
+                    </div>
+                    <h3 className="text-[16px] flex gap-2 items-center font-bold text-white dark:text-gray-300 mt-2">
+                      Arctic Wolf Expands to ANZ
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        viewBox="0 0 24 24"
+                        fill="none"
+                        stroke="currentColor"
+                        strokeWidth="2"
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        className="text-white dark:text-sky-500"
+                      ></svg>
+                    </h3>
+                  </div>
                 </div>
               </div>
 
@@ -184,11 +240,27 @@ const Journey = () => {
                 </div>
 
                 <div className="relative -mt-6 flex h-fit md:w-[90%] lg:w-[80%] justify-end z-20">
-                      <Image
+                  <div className="relative border border-blue-300 dark:border-[#3577f39a] py-4 px-8 max-w-[24rem] bg-gradient-to-br from-black via-violet-900 to-violet-500 dark:bg-gradient-to-b dark:from-[#000] dark:to-[#120a1d] transition-all duration-500 shadow-lg hover:shadow-[0_4px_8px_0_rgba(75,0,130,0.5)] rounded-lg">
+                    <p className="text-transparent bg-clip-text bg-gradient-to-r from-white via-gray-200 to-gray-400 dark:bg-[linear-gradient(to_right,_#3c3cbf_0%,_#FFFFFF_50%)] font-bold text-xl">
+                      May 2023
+                    </p>
+                    <div>
+                      <img
                         alt="IDC Names Arctic Wolf a Leader"
-                        className="rounded-lg border max-h-[300px] w-[400px] h-full"
-                        src={Journey4}
+                        className="rounded-lg border max-h-[212px] w-[317px] h-full"
+                        src="https://everythingtalent.ai/_next/image?url=%2Fassets%2Fhome%2Farticle.jpg&w=256&q=75"
                       />
+                    </div>
+                    <h3 className="text-[16px] flex gap-2 items-center font-bold text-white dark:text-gray-300 mt-2">
+                      Arctic Wolf on CNBC Disruptor 50
+                      <svg
+                        xmlns="http://www.w3.org/2000/svg"
+                        width="24"
+                        height="24"
+                        fill="none"
+                      ></svg>
+                    </h3>
+                  </div>
                 </div>
               </div>
             </div>

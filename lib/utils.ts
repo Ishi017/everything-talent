@@ -1,5 +1,10 @@
 // lib/utils.ts
-export function cn(...classes: string[]) {
-    return classes.filter(Boolean).join(' ');
-  }
-  
+
+// utils.js
+import { ClassValue, clsx } from "clsx";
+import { twMerge } from "tailwind-merge";
+
+export function cn(...inputs: ClassValue[]) {
+  // Combine the class names using clsx and merge Tailwind CSS classes with twMerge
+  return twMerge(clsx(inputs));
+}

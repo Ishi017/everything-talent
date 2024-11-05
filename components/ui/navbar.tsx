@@ -13,6 +13,11 @@ const useDarkMode = () => {
   useEffect(() => {
     const storedTheme = localStorage.getItem("theme") || "light";
     document.documentElement.classList.add(storedTheme);
+    if (storedTheme === "dark") {
+      document.body.style.backgroundColor = "#010817"; // Set dark mode background color
+    } else {
+      document.body.style.backgroundColor = ""; // Reset background color
+    }
     setTheme(storedTheme);
   }, []);
 
@@ -21,6 +26,9 @@ const useDarkMode = () => {
     document.documentElement.classList.replace(theme, newTheme);
     localStorage.setItem("theme", newTheme);
     setTheme(newTheme);
+
+    // Set background color based on the new theme
+    document.body.style.backgroundColor = newTheme === "dark" ? "#010817" : ""; // Reset for light mode
   };
 
   return { theme, toggleTheme };
@@ -36,7 +44,7 @@ const Navbar: React.FC = () => {
 
   return (
     <>
-      <div className="fixed w-full top-0 bg-white dark:bg-gray-900 py-2 px-4 md:py-2 md:px-32 flex justify-between items-center border-b-2  dark:border-gray-600 z-40">
+      <div className="fixed w-full top-0 bg-white dark:bg-gray-900 py-2 px-4 md:py-2 md:px-32 flex justify-between items-center border-b-2 dark:border-gray-600 z-40">
         {/* Logo and Site Name */}
         <div className="flex items-center space-x-2">
           <Image

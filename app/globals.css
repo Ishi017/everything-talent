@@ -63,11 +63,37 @@ body {
   }
 }
 
-@layer base {
-  * {
-    @apply border-border;
+@layer components {
+  .border-border {
+    border-color: your-desired-color; /* Replace with actual color */
   }
-  body {
-    @apply bg-background text-foreground;
+}
+
+
+/* Aurora Background Animation */
+@keyframes aurora {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.animate-aurora-gradient {
+  animation: aurora 30s ease-in-out infinite;
+}
+
+@keyframes cardIn {
+  0% {
+    opacity: 0;
+    transform: translateY(50px) scale(0.8);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
   }
 }
